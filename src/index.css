@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* web background */
+.app-background {
+  background: rgb(18, 24, 51);
+  background: linear-gradient(
+    40deg,
+    rgba(18, 24, 51, 1) 0%,
+    rgba(19, 19, 50, 1) 47%,
+    rgba(1, 7, 61, 1) 100%
+  );
+}
+
+ul li {
+  @apply hover:scale-105 transition-transform;
+}
+
+ul li a {
+  @apply transition-all;
+}
+
+.nav-items li a {
+  color: #edeff0;
+  font-weight: 500;
+}
+
+.nav-items li a:hover {
+  color: #cddadd;
+  transform: scale(2);
+}
+
+.nav-items li a.active {
+  color: #49cbe9;
+}
+
+.primary-btn {
+  background: rgb(79, 153, 216);
+  background: linear-gradient(
+    40deg,
+    rgba(79, 153, 216, 1) 0%,
+    rgba(71, 38, 189, 1) 100%
+  );
+  color: white;
+}
