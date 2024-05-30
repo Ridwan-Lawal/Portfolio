@@ -4,6 +4,8 @@ export default {
   theme: {
     fontFamily: {
       kumbh: ["Kumbh Sans", "sans-serif"],
+      merriweather: ["Merriweather", "serif"],
+      playfair: ["Playfair Display", "serif"],
     },
     extend: {},
   },
