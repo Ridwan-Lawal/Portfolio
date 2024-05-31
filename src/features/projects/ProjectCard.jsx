@@ -15,7 +15,7 @@ function ProjectCard({
   projectName,
 }) {
   return (
-    <div className="shadow-2xl  md:shadow-none font-kumbh bg-gray-950 space-y-8 pb-11 max-w-lg md:max-w-6xl rounded-xl lg:bg-transparent lg:grid lg:grid-cols-2  md:justify-items-between md:items-center gap-12">
+    <div className="shadow-xl shadow-[#000408]  md:shadow-none font-kumbh bg-[#00070f] space-y-8 pb-11 max-w-lg md:max-w-6xl rounded-xl lg:bg-transparent lg:grid lg:grid-cols-2  md:justify-items-between md:items-center gap-12">
       <section className={`${imageOrder}`}>
         <Image
           imgPath={projectImg}

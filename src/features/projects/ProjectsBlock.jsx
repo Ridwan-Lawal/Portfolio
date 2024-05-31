@@ -1,5 +1,7 @@
 import ProjectCard from "./ProjectCard";
 
+// #BA68C8
+
 function ProjectsBlock() {
   return (
     <div className="">
@@ -9,7 +11,7 @@ function ProjectsBlock() {
           <p className="text-gray-300 lg:mt-3">Some of my works</p>
         </div>
 
-        <div className="space-y-14">
+        <div className="gap-y-14 lg:gap-y-20 grid md:grid-cols-2 lg:grid-cols-1 gap-8">
           <ProjectCard
             imageOrder="md:order-2"
             detailsOrder="md:order-1"

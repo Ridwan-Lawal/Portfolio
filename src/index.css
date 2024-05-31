@@ -6,11 +6,11 @@
 
 /* web background */
 .app-background {
-  background: rgb(1, 14, 25);
+  background: rgb(0, 9, 17);
   background: linear-gradient(
     40deg,
-    rgba(1, 14, 25, 1) 0%,
-    rgba(6, 0, 28, 1) 100%
+    rgba(0, 9, 17, 1) 0%,
+    rgba(0, 8, 17, 1) 100%
   );
 }
 
