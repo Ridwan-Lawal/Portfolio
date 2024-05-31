@@ -33,7 +33,7 @@ function NavBar() {
           } top-0`}
         >
           <li>
-            <NavLink to="/home">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
             <a href="#about">About</a>

@@ -1,11 +1,20 @@
-function Image() {
+/* eslint-disable react/prop-types */
+function Image({
+  imgPath = "icons/passport.JPG",
+  width = "w-full md:w-[100%]",
+  rounded = "rounded-xl",
+  border = "md:border-8",
+  position = "md:relative lg:-top-7 lg:-left-10 ",
+}) {
   return (
-    <div className="md:border-8 border-[#49cbe9] w-full md:w-full  rounded-xl overflow-hidden group flex ">
+    <div
+      className={`${border} border-[#49cbe9] w-full md:w-full ${rounded} overflow-hidden md:overflow-visible group flex `}
+    >
       <div>
         <img
-          src="/public/assets/icons/passport.JPG"
+          src={`/assets/${imgPath}`}
           alt=""
-          className="w-full md:w-[100%] relative md:-top-5 md:-left-5 lg:-top-7 lg:-left-8 group-hover:scale-105 transition-transform duration-800 rounded-xl"
+          className={`${width} ${position}  md:-top-5 md:-left-5 group-hover:scale-105 md:group-hover:scale-100 transition-transform duration-800 ${rounded}`}
         />
       </div>
     </div>
