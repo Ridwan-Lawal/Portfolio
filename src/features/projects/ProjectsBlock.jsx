@@ -5,10 +5,10 @@ import ProjectCard from "./ProjectCard";
 function ProjectsBlock() {
   return (
     <div className="">
-      <div className="flex flex-col items-center gap-11 mt-28 md:mt-28 px-12">
+      <div className="flex flex-col items-center gap-11 mt-28 md:mt-28">
         <div className="text-center">
           <h2 className="heading">Projects</h2>
-          <p className="text-gray-300 lg:mt-3">Some of my works</p>
+          <p className="text-gray-300 lg:mt-3">Some of my projects</p>
         </div>
 
         <div className="gap-y-14 lg:gap-y-20 grid md:grid-cols-2 lg:grid-cols-1 gap-8">

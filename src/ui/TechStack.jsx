@@ -2,7 +2,7 @@ import Stack from "./Stack";
 
 function TechStack() {
   return (
-    <div className="flex flex-col items-center gap-11 mt-24 md:mt-28 px-6">
+    <div className="flex flex-col items-center gap-11 mt-24 md:mt-28">
       <div className="text-center">
         <h2 className="heading">Tech Stack</h2>
         <p className="text-gray-300">Technologies I work with</p>

@@ -27,7 +27,7 @@ function Header() {
   );
 
   return (
-    <header className="mt-5 md:mt-8 lg:mt-0 max-w-[1150px] px-12 mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-6 flex-col  md:flex-row   justify-between">
+    <header className="mt-5 md:mt-8 lg:mt-0 max-w-[1150px]  mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-6 flex-col  md:flex-row   justify-between">
       <div className=" max-w-[600px]  order-2 text-center md:text-left md:order-1 space-y-4">
         <span
           ref={typeEl}
