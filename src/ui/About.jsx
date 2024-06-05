@@ -7,7 +7,7 @@ function About() {
       <h2 className="heading text-center mb-10 md:hidden">About me</h2>
       <div
         id="about"
-        className=" grid grid-cols-1 md:grid-cols-2 border max-w-[1150px] gap-6 mx-auto items-center justify-items-center  md:px-6"
+        className=" grid grid-cols-1 md:grid-cols-2  max-w-[1150px] gap-6 mx-auto items-center justify-items-center  md:px-6"
       >
         <div className="w-[60%]  sm:w-[40%] md:w-[60%]   flex items-center shadow-2xl shadow-gray-950 ">
           <Image />
