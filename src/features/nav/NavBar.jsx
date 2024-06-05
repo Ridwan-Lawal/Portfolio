@@ -28,7 +28,7 @@ function NavBar() {
         </section>
 
         <ul
-          className={` bg-gray-950 fixed md:static left-0 h-screen  flex gap-9 nav-items overflow-hidden flex-col md:flex-row justify-center transition-all md:w-fit md:h-fit md:bg-transparent duration-650 items-center ${
+          className={` bg-[#000408] fixed md:static left-0 h-screen  flex gap-9 nav-items overflow-hidden flex-col md:flex-row justify-center transition-all md:w-fit md:h-fit md:bg-transparent duration-650 items-center ${
             menuIsClicked ? "w-full px-6" : "w-0 px-0"
           } top-0`}
         >
