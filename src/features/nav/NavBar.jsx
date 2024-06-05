@@ -45,7 +45,14 @@ function NavBar() {
             <NavLink to="/projects">Projects</NavLink>
           </li>
 
-          <Button>Resume</Button>
+          <a
+            href="/public/assets/CV-Ridwan.pdf"
+            download="CV-Ridwan.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Resume</Button>
+          </a>
         </ul>
       </div>
     </nav>

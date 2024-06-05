@@ -9,7 +9,7 @@ function About() {
         id="about"
         className=" grid grid-cols-1 md:grid-cols-2 max-w-[1150px] gap-6  mx-auto items-center justify-items-center px-8 md:px-6"
       >
-        <div className="w-[60%] sm:w-[40%] md:w-[60%]   flex items-center shadow-2xl shadow-gray-950 ">
+        <div className="w-[60%]  sm:w-[40%] md:w-[60%]   flex items-center shadow-2xl shadow-gray-950 ">
           <Image />
         </div>
         <div className=" justify-self-start text-center w-fit  md:text-left  max-w-[600px] mx-auto">
@@ -22,7 +22,14 @@ function About() {
             continuous professional development and collaboration to deliver
             high-quality solutions.
           </p>
-          <Button>Resume</Button>
+          <a
+            href="/public/assets/CV-Ridwan.pdf"
+            download="CV-Ridwan.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Resume</Button>
+          </a>
         </div>
       </div>
     </div>
