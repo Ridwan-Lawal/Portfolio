@@ -8,7 +8,7 @@ function NavBar() {
   const [menuIsClicked, setMenuIsClicked] = useState(false);
 
   return (
-    <nav className="">
+    <nav className="z-50">
       <div className="flex items-center justify-between flex-wrap md:flex-nowrap max-w-[1220px] py-7 px-10  mx-auto">
         <section className="z-50 ">
           <img
