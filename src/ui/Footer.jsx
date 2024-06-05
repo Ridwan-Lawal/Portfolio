@@ -4,7 +4,7 @@ import { SiGmail } from "react-icons/si";
 
 function Footer() {
   return (
-    <footer className="bg-[#000408] px-10">
+    <footer className="bg-[rgb(1,6,10)] px-10">
       <div className="flex flex-col sm:flex-row justify-between items-center min-h-[80px] py-8 md:max-w-[1220px] mx-auto  mt-36 gap-8">
         <p className="text-white uppercase text-[12.5px] font-semibold tracking-[2px] ">
           &copy; {new Date().getFullYear()} Lawal Ridwan{" "}
