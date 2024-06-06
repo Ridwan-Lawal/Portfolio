@@ -11,11 +11,7 @@ function NavBar() {
     <nav className="z-50">
       <div className="flex items-center justify-between flex-wrap md:flex-nowrap max-w-[1220px] py-7 px-10  mx-auto">
         <section className="z-50 ">
-          <img
-            src="/assets/icons/logo2.svg"
-            alt=""
-            className="w-[53px] md:w-14 "
-          />
+          <img src="/assets/icons/logo2.svg" className="w-[53px] md:w-14 " />
         </section>
 
         <section
@@ -28,7 +24,7 @@ function NavBar() {
         </section>
 
         <ul
-          className={` bg-[#000408] fixed md:static left-0 h-screen  flex gap-9 nav-items overflow-hidden flex-col md:flex-row justify-center transition-all md:w-fit md:h-fit md:bg-transparent duration-650 items-center ${
+          className={` bg-[#030205] fixed md:static left-0 h-screen  flex gap-9 nav-items overflow-hidden flex-col md:flex-row justify-center transition-all md:w-fit md:h-fit md:bg-transparent duration-650 items-center ${
             menuIsClicked ? "w-full px-6" : "w-0 px-0"
           } top-0`}
         >
