@@ -1,15 +1,31 @@
-import { NavLink } from "react-router-dom";
 import Button from "../../ui/Button";
 import { HiMiniXMark } from "react-icons/hi2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RiMenu4Fill } from "react-icons/ri";
 
 function NavBar() {
   const [menuIsClicked, setMenuIsClicked] = useState(false);
+  const [isNavFixed, setIsNavFixed] = useState(false);
+
+  useEffect(function () {
+    function onScroll() {
+      if (window.scrollY >= 300) setIsNavFixed(true);
+      else setIsNavFixed(false);
+    }
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="z-50">
-      <div className="flex items-center justify-between flex-wrap md:flex-nowrap max-w-[1220px] py-7 px-10  mx-auto">
+    <nav
+      className={`z-50 transition-all ${
+        isNavFixed
+          ? "fixed w-full shadow-lg bg-[rgb(1,6,10)] py-6 md:py-4"
+          : "static py-7"
+      }`}
+    >
+      <div className="flex items-center justify-between flex-wrap md:flex-nowrap max-w-[1220px]  px-10  mx-auto">
         <section className="z-50 ">
           <img src="/assets/icons/logo2.svg" className="w-[53px] md:w-14 " />
         </section>
@@ -24,23 +40,22 @@ function NavBar() {
         </section>
 
         <ul
-          className={` bg-[#030205] fixed md:static left-0 h-screen  flex gap-9 nav-items overflow-hidden flex-col md:flex-row justify-center transition-all md:w-fit md:h-fit md:bg-transparent duration-650 items-center ${
+          className={` bg-[#030205] z-10 fixed md:static left-0 h-screen  flex gap-9 nav-items overflow-hidden flex-col md:flex-row justify-center transition-all md:w-fit md:h-fit md:bg-transparent duration-650 items-center ${
             menuIsClicked ? "w-full px-6" : "w-0 px-0"
           } top-0`}
         >
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#techstack">Tech Stack</a>
-          </li>
-          <li>
-            <NavLink to="/projects">Projects</NavLink>
-          </li>
-
+          {["Home", "About", "Skills", "Projects", "Contact"].map(
+            (link, id) => (
+              <li key={id}>
+                <a
+                  onClick={() => setMenuIsClicked(false)}
+                  href={`#${link.toLowerCase()}`}
+                >
+                  {link}
+                </a>
+              </li>
+            )
+          )}
           <a
             href="/public/assets/CV-Ridwan.pdf"
             download="CV-Ridwan.pdf"

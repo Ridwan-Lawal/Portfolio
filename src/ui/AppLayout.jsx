@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function AppLayout() {
   return (
-    <div className="min-h-screen  overflow-auto app-background font-kumbh">
+    <div className="min-h-screen home  overflow-auto app-background font-kumbh">
       <NavBar />
       <div>
         <Outlet />

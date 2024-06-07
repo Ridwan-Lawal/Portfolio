@@ -12,7 +12,7 @@ function Footer() {
 
         <div className="text-white flex flex-col sm:flex-row gap-5 ">
           <p className="text-[13px] font-medium">Connect with me:</p>
-          <ul className="flex items-center gap-4 ">
+          <ul className="flex items-center media gap-4 ">
             <li>
               <a
                 href="https://github.com/Ridwan-Lawal"

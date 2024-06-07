@@ -1,40 +1,27 @@
-import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 import FormInput from "./FormInput";
-import { useMutation } from "@tanstack/react-query";
-import { addContact } from "../../services/apiContact";
-import toast from "react-hot-toast";
+
+import { useForm } from "react-hook-form";
+import { useAddContact } from "../../hooks/useAddContact";
 
 function ContactForm() {
   const { register, handleSubmit, formState, reset } = useForm();
+  const { isSubmitting, createContact } = useAddContact();
+
   const { errors } = formState;
 
-  // create a dummy table in supabase
-
-  const { isLoading: isSending, mutate } = useMutation({
-    mutationFn: addContact,
-    onSuccess: () => {
-      toast.success("Message sent!");
-      reset();
-    },
-    onError: (err) => {
-      toast.error(err.message);
-    },
-  });
-
-  function onSubmit(data) {
-    console.log(data);
-    mutate(data);
-  }
-
-  function onError(errors) {
-    console.log(errors);
+  async function onSubmit(data) {
+    createContact(data, {
+      onSuccess: () => {
+        reset();
+      },
+    });
   }
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit, onError)}
-      className=" space-y-10 mt-2"
+      onSubmit={handleSubmit(onSubmit)}
+      className=" space-y-10 mt-2 contact-form"
     >
       <FormInput label="Name" error={errors?.name?.message}>
         <input
@@ -43,8 +30,9 @@ function ContactForm() {
           id="name"
           className="duration-500"
           placeholder="Please enter your name"
+          disabled={isSubmitting}
           {...register("name", {
-            required: "Your name is required!",
+            required: "Kindly fill in your name",
           })}
         />
       </FormInput>
@@ -55,8 +43,13 @@ function ContactForm() {
           id="email"
           className="duration-500"
           placeholder="Please enter your email"
+          disabled={isSubmitting}
           {...register("email", {
-            required: "Your email address is required!",
+            required: "Kindly fill in your email",
+            pattern: {
+              value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+              message: "Kindly input a valid email address!",
+            },
           })}
         />
       </FormInput>
@@ -67,8 +60,9 @@ function ContactForm() {
           id="subject"
           className="duration-500"
           placeholder="Please enter your subject"
+          disabled={isSubmitting}
           {...register("subject", {
-            required: "Please add a subject!",
+            required: "Your message needs a subject",
           })}
         />
       </FormInput>
@@ -81,14 +75,15 @@ function ContactForm() {
           rows="6"
           className="duration-500 w-full placeholder:text-sm "
           placeholder="Please enter your subject"
+          disabled={isSubmitting}
           {...register("message", {
-            required: "Kindly leave a message!",
+            required: "Kindly leave a message",
           })}
         />
       </FormInput>
 
-      <Button disabled={isSending}>
-        {isSending ? "Sending Message..." : "Send Message"}{" "}
+      <Button disabled={isSubmitting}>
+        {isSubmitting ? "Sending Message..." : "Send Message"}{" "}
       </Button>
     </form>
   );

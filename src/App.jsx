@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import PageNotFound from "./pages/PageNotFound";
-import AppLayout from "./ui/AppLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
 import { Toaster } from "react-hot-toast";
+import { Suspense, lazy } from "react";
+
+import Home from "./pages/Home";
+import Loader from "./ui/Loader";
+const AppLayout = lazy(() => import("./ui/AppLayout"));
 
 function App() {
   const queryClient = new QueryClient({
@@ -22,13 +22,13 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter>
-          <Routes>
-            <Route element={<AppLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="projects" element={<Projects />} />
-              <Route path="*" element={<PageNotFound />} />
-            </Route>
-          </Routes>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route element={<AppLayout />}>
+                <Route path="/" element={<Home />} />
+              </Route>
+            </Routes>
+          </Suspense>
         </BrowserRouter>
 
         <Toaster

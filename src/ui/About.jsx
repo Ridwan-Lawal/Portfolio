@@ -3,7 +3,7 @@ import Image from "./Image";
 
 function About() {
   return (
-    <div className="mt-28">
+    <div id="about" className="mt-28">
       <h2 className="heading text-center mb-10 md:hidden">About me</h2>
       <div
         id="about"

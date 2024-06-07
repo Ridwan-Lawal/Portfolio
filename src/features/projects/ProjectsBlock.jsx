@@ -1,10 +1,8 @@
 import ProjectCard from "./ProjectCard";
 
-// #BA68C8
-
 function ProjectsBlock() {
   return (
-    <div className="">
+    <div id="projects">
       <div className="flex flex-col items-center gap-11 mt-28 md:mt-28">
         <div className="text-center">
           <h2 className="heading">Projects</h2>
