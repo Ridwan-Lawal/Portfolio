@@ -43,9 +43,9 @@ function App() {
               duration: 5000,
             },
             style: {
-              fontSize: "16px",
+              fontSize: "13px",
               maxWidth: "500px",
-              padding: "16px 24px",
+              padding: "8px 15px",
               backgroundColor: "#1f1e1e",
               color: "white",
             },
