@@ -23,7 +23,7 @@ function About() {
             high-quality solutions.
           </p>
           <a
-            href="/public/assets/CV-Ridwan.pdf"
+            href="/assets/CV-Ridwan.pdf"
             download="CV-Ridwan.pdf"
             target="_blank"
             rel="noopener noreferrer"
