@@ -1,21 +1,12 @@
 import Button from "../../ui/Button";
 import { HiMiniXMark } from "react-icons/hi2";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RiMenu4Fill } from "react-icons/ri";
+import { useNavFixed } from "../../hooks/useNavFixed";
 
 function NavBar() {
   const [menuIsClicked, setMenuIsClicked] = useState(false);
-  const [isNavFixed, setIsNavFixed] = useState(false);
-
-  useEffect(function () {
-    function onScroll() {
-      if (window.scrollY >= 300) setIsNavFixed(true);
-      else setIsNavFixed(false);
-    }
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const isNavFixed = useNavFixed();
 
   return (
     <nav
@@ -57,7 +48,7 @@ function NavBar() {
             )
           )}
           <a
-            href="/public/assets/CV-Ridwan.pdf"
+            href="/assets/CV-Ridwan.pdf"
             download="CV-Ridwan.pdf"
             target="_blank"
             rel="noopener noreferrer"
