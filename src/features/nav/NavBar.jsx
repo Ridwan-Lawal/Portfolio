@@ -52,6 +52,7 @@ function NavBar() {
             download="CV-Ridwan.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => setMenuIsClicked(false)}
           >
             <Button>Resume</Button>
           </a>
